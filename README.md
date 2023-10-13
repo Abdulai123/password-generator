@@ -7,7 +7,9 @@ needs more improvement.
 
 
 ## Screenshots
+![Screenshot (2)](https://github.com/Abdulai123/password-generator/assets/95375134/d6ec1691-5106-4e99-9e3f-a3e9059f6525)
 
+![Screenshot (1) (1)](https://github.com/Abdulai123/password-generator/assets/95375134/99a06428-f9e3-4edf-b7a7-33523323d2db)
 
 ## Installation
  - composer install
