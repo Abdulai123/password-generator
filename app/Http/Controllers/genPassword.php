@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Input\Input;
 
 class genPassword extends Controller
 {
@@ -13,7 +12,6 @@ class genPassword extends Controller
    protected $lowercase  = 'abcdefghijklmnopqrstuvwxyz';
    protected $numbers    = '0123456789';
    protected $characters = '~@#$%^&*()_+-=[]\{}|;:/<>?';
-
 
     /**
      * generate
@@ -28,23 +26,23 @@ class genPassword extends Controller
     protected function generate($pl = 16, $u = true, $l = true, $c = true, $n = true){
 
         $storeJoinedStrings = '';
+
+        $data = [$u, $l, $c, $n];
         
-        if ($u === false) {
-            $storeJoinedStrings .= $this->lowercase . $this->numbers . $this->characters;
-
-        }elseif ($l === false) {
-            $storeJoinedStrings .= $this->uppercase . $this->numbers . $this->characters;
-
-        }elseif ($n === false) {
-            $storeJoinedStrings .= $this->uppercase . $this->lowercase . $this->characters;
-
-        }elseif ($c === false) {
-            $storeJoinedStrings .= $this->uppercase . $this->lowercase . $this->numbers;
-
-        }else{
-            $storeJoinedStrings .= $this->uppercase . $this->lowercase . $this->numbers . $this->characters;
+        for ($i = 0; $i < 4; $i++) {
+            if ($data[$i]) { // Check if the current input value is true
+                if ($i === 0) {
+                    $storeJoinedStrings .= $this->uppercase;
+                } elseif ($i === 1) {
+                    $storeJoinedStrings .= $this->lowercase;
+                } elseif ($i === 2) {
+                    $storeJoinedStrings .= $this->characters;
+                } elseif ($i === 3) {
+                    $storeJoinedStrings .= $this->numbers;
+                }
+            }
         }
-
+      
         $randomPassword = '';
         for ($i=0; $i < $pl; $i++) { 
                 $randomPassword .= $storeJoinedStrings[rand(0, strlen($storeJoinedStrings) - 1)];

@@ -17,19 +17,19 @@
 
             <div class="options">
                 <span>1. Include Uppercase Letters [A - Z] : </span>
-                <input type="checkbox" name="A_Z" id="" checked>
+                <input type="checkbox" name="A_Z" id="" >
             </div>
             <div class="options">
                 <span>2. Include Lowercase Letters [a - z] : </span>
-                <input type="checkbox" name="a_z" id="" checked>
+                <input type="checkbox" name="a_z" id="" >
             </div>
             <div class="options">
                 <span>4. Include Characters [@#$%...] : </span>
-                <input type="checkbox" name="characters" id="" checked>
+                <input type="checkbox" name="characters" id="">
             </div>
             <div class="options">
                 <span>3. Include Numbers [0 - 9]: </span>
-                <input type="checkbox" name="0_9" id="" checked>
+                <input type="checkbox" name="0_9" id="">
             </div>
 
             {{-- <div class="leng"> --}}
